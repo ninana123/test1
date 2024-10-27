@@ -1,45 +1,78 @@
 <script setup>
 
 import IconVk from "@/components/icons/IconVk.vue";
+import IconTelegram from "@/components/icons/IconTelegram.vue";
+import IconAvito from "@/components/icons/IconAvito.vue";
+
 </script>
 
 <template>
-  <footer id="contacts">
+  <footer
+      id="contacts">
     <div class="bg-c-blue-1">
       <div class="container">
-        <div class="flex items-center">
-          <div class="flex flex-col items-center mr-16">
-            <img src="@/assets/logo-white.svg" alt="logo">
+        <div class="flex items-center no-wrap justify-between py-12 sm:flex-col">
+          <div class="flex flex-col items-center mr-16 lg:mr-2">
+            <router-link :to="{name:'Home'}">
+              <img class="lg:max-w-[100px]" src="@/assets/logo-white.svg" alt="logo">
+            </router-link>
             <div class="flex gap-4 mt-4">
-              <icon-vk  />
-              <icon-vk  />
-              <icon-vk  />
+              <a href="https://vk.com/nasvyazi_store">
+                <icon-vk/>
+              </a>
+              <a href="https://t.me/na_svyazi_shop">
+                <icon-telegram/>
+              </a>
+              <a href="">
+                <icon-avito/>
+              </a>
             </div>
           </div>
-          <nav class="">
-            <ul class="font-bold text-white text-lg flex justify-between gap-12">
-              <li class="navbar__link">Тарифы</li>
-              <li class="navbar__link">FAQs</li>
-              <li class="navbar__link">Личный кабинет</li>
-              <li class="navbar__link">Связаться с нами</li>
+          <nav class="navbar">
+            <ul class="w-full text-lg flex gap-x-16 justify-between items-center xl:gap-x-12 lg:text-base lg:gap-x-6 sm:flex-col ">
+              <li class="navbar__link">
+                <router-link :to="{name:'Home',hash:'#services'}" class="font-bold">Тарифы</router-link>
+              </li>
+              <li class="navbar__link">
+                <router-link :to="{name:'Home',hash:'#faqs'}" class="font-bold">FAQs</router-link>
+              </li>
+              <li class="navbar__link">
+                <router-link :to="{name:'Home'}" class="font-bold">Личный кабинет</router-link>
+              </li>
+              <li class="navbar__link navbar__feedback">
+                <router-link :to="{name:'Home',hash:'#feedback'}" class="font-bold">Связаться с нами</router-link>
+              </li>
             </ul>
           </nav>
         </div>
       </div>
     </div>
+
   </footer>
 </template>
 
 <style scoped>
 .navbar__link {
-  padding:10px;
-  border-radius: 10px;
-  border: 2px solid transparent; /* Начальное состояние - прозрачная граница */
-  transition: color .3s ease-out, border-color .3s ease-out; /* Переход для цвета и границы */
-  font-weight: 700;
+  padding: 15px 30px;
+  transition: all .3s ease-out;
+  cursor: pointer;
+  color: white;
 }
 
-.navbar__link:hover {
-  border-color: white; /* Цвет границы при наведении */
+@media (max-width: 1023px) {
+  
+} .navbar__link{
+    padding: 15px;
+}
+
+.navbar__feedback {
+  border-radius: 10px;
+  border: 3px solid white; /* Начальное состояние - прозрачная граница */
+  transition: all .3s ease-out;
+}
+
+.navbar__feedback:hover {
+  background-color: white;
+  color: #3831fe;
 }
 </style>

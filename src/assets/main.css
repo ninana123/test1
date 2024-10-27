@@ -1,6 +1,6 @@
 @import './base.css';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@tailwind base;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -10,14 +10,29 @@ body{
   font-style: normal;
 }
 
+html{
+  overflow-x: hidden;
+}
+
 .container {
   max-width: 1160px;
   margin: 0 auto;
-  padding: 2rem;
   font-weight: normal;
 }
-html {
-  scroll-behavior: smooth; /* Плавный скроллинг */
+.font2 {
+  font-family: "Raleway", sans-serif !important;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
+@media  (max-width: 1279px) {
+  .container{
+    padding: 0 20px;
+  }
 
+}
+@media  (max-width: 639px) {
+  .container{
+    padding: 0 10px;
+  }
 
+}
