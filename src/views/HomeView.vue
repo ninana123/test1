@@ -247,6 +247,8 @@ const onSubmit = () => {
                        data-aos="fade-up"
                        data-aos-delay="500"
                        data-aos-duration="500"
+                       data-aos-once="true"
+
                   >
                     <div class="text-bold text-5xl font2 sm:text-4xl">25000+</div>
                     <div class="sm:text-sm sm:max-w-[130px]">Доход партнеров в неделю</div>
